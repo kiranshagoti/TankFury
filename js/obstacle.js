@@ -10,6 +10,6 @@ class Obstacle {
 
     draw() {
         rect(this.x, this.y, this.width, this.height);
-        this.x -= this.speed;
+        this.x += this.speed;
     }
 }

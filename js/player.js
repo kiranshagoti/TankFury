@@ -1,7 +1,7 @@
 class Player {
     constructor() {
-        this.x = 500;
-        this.y = 400;
+        this.x = window.innerWidth / 2 - 50;
+        this.y = window.innerHeight - 100;
         this.angle = 0;
 
     }
@@ -20,15 +20,18 @@ class Player {
         fill("red");
         rect(this.x, this.y, 100, 100);
         push();
+        console.log(this.angle)
         translate(this.x + 50, this.y);
         rotate(this.angle);
         fill("black");
         strokeWeight(2);
         stroke(126);
+
         line(0, 0, 0, -20);
         pop();
         this.aim();
         //  this.shoot();
+
     }
     aim() {
 
@@ -40,13 +43,5 @@ class Player {
             this.angle -= .1;
         }
     }
-    // shoot() {
-    //     if (keyIsDown(32)) {
-    //         let bullet = new Bullet(this.x, this.y, this.angle);
-    //         bullet.draw();
-    //         //game.bullets.push(bullet);
 
-    //     }
-
-    // }
 }
