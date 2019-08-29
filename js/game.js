@@ -6,6 +6,9 @@ class Game {
         // this.bullet = new Bullet();
         this.obstacles = [];
         this.troopers = [];
+        this.leftTroopers = 0;
+        this.rightTroopers = 0;
+        this.score = 0;
     }
     setup() {
         this.background.setup();
@@ -35,11 +38,14 @@ class Game {
             this.troopers.push(new Trooper(0, height - 520, 1));
         }
         this.troopers.forEach((trooper, index) => {
-            if (trooper.y + trooper.height <= 0) {
-                this.troopers.splice(index, 1);
-            }
+            // if (trooper.y + trooper.height <= 0) {
+            //     this.troopers.splice(index, 1);
+            // }
             trooper.draw();
+            trooper.move();
+
         });
 
     }
+   
 }
