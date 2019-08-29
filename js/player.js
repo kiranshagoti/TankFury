@@ -19,8 +19,8 @@ class Player {
     }
 
     draw() {
-        fill("red");
-        rect(this.x - this.width / 2, this.y, 100, 100);
+        // fill("red");
+        image(playerImg, this.x - this.width / 2, this.y, 100, 100);
         push();
         translate(this.x, this.y);
         rotate(this.angle);

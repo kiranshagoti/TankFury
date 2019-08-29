@@ -9,6 +9,11 @@ class Game {
         this.leftTroopers = 0;
         this.rightTroopers = 0;
         this.score = 0;
+        this.explosions=[];
+    }
+
+    preload() {
+
     }
     setup() {
         this.background.setup();
@@ -19,9 +24,10 @@ class Game {
         this.background.draw();
         this.player.draw();
         // this.bullet.draw();
+
         if (frameCount > 120 && frameCount % 120 === 0) {
-            this.obstacles.push(new Obstacle(0, window.innerHeight - 500, 4));
-            this.obstacles.push(new Obstacle(window.innerWidth, window.innerHeight - 520, -4));
+            this.obstacles.push(new Obstacle(obstacleImg2, 0, window.innerHeight - 600, 4));
+            this.obstacles.push(new Obstacle(obstacleImg, window.innerWidth, window.innerHeight - 520, -4));
         }
         // if (this.obstacles.length > 4) this.obstacles.shift();
         // if (this.obstacles.length > 4) this.obstacles.shift();
@@ -34,8 +40,8 @@ class Game {
             obstacle.draw();
         });
         if (frameCount > 150 && frameCount % 150 === 0) {
-            this.troopers.push(new Trooper(this.obstacles, height - 500, -1));
-            this.troopers.push(new Trooper(0, height - 520, 1));
+            this.troopers.push(new Trooper(trooperImg, this.obstacles, height - 500, -1));
+            this.troopers.push(new Trooper(trooperImg2, 0, height - 520, 1));
         }
         this.troopers.forEach((trooper, index) => {
             // if (trooper.y + trooper.height <= 0) {
@@ -47,5 +53,5 @@ class Game {
         });
 
     }
-   
+
 }

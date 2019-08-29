@@ -1,17 +1,18 @@
 class Trooper {
-    constructor() {
+    constructor(img) {
         this.width = 100 / 4;
         this.height = 100 / 3; // tankHeight/3
         this.randomObstacle = game.obstacles[Math.floor(Math.random() * game.obstacles.length)]
         this.y = this.randomObstacle.y;
         this.x = this.randomObstacle.x;
         this.ground = false
+        this.img = img;
 
 
     }
 
     draw() {
-        rect(this.x, this.y, this.width, this.height);
+        image(this.img, this.x, this.y, this.width, this.height);
 
         if (!this.ground && this.y + this.height < window.innerHeight) {
             this.y += 1;
@@ -27,13 +28,17 @@ class Trooper {
                 this.x -= 1;
             }
             if (!this.ground && this.x + this.width === game.player.x - game.player.width / 2) {
+                console.log(game.rightTroopers)
                 // collision with left side
                 game.leftTroopers += 1;
                 this.ground = true;
                 this.y = window.innerHeight - game.leftTroopers * this.height;
                 if (this.y + this.height <= game.player.y) {
-                    textSize(90);
-                    text("Game Over", 400, 500)
+                    setTimeout(() => {
+                        textSize(90);
+                        text("Game Over", 400, 500)
+
+                    }, 1000)
                     noLoop();
                 }
 
@@ -46,8 +51,10 @@ class Trooper {
                 this.ground = true;
                 this.y = window.innerHeight - game.rightTroopers * this.height;
                 if (this.y + this.height <= game.player.y) {
-                    textSize(90);
-                    text("Game Over", 400, 500)
+                    setTimeout(() => {
+                        textSize(90);
+                        text("Game Over", 400, 500)
+                    }, 1000)
                     noLoop();
                 }
 

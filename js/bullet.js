@@ -18,12 +18,15 @@ class Bullet {
         this.y -= cos(this.angle) * 10;
         pop();
     }
-    collisionCheck(obstacleArray,points) {
+    collisionCheck(obstacleArray, points) {
 
         obstacleArray.forEach((obstacle, i) => {
             if (this.y <= obstacle.y + obstacle.height && this.y >= obstacle.y && this.x <= obstacle.x /*- 50*/ + obstacle.width && this.x >= obstacle.x /*- 50*/ ) {
+                let explosion = new Explosion(obstacle.x, obstacle.y);
+                explosion.setup()
+                explosionSound.play();
                 obstacleArray.splice(i, 1);
- 
+
                 score += points;
 
                 return true;
