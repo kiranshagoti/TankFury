@@ -4,17 +4,17 @@ let explosionAnimation;
 let explosionSound;
 
 function preload() {
-    image1 = loadImage("/assets/Flat Nature Art.png");
-    obstacleImg = loadImage("/assets/kisspng-airplane-aircraft-cartoon-illustration-the-falling-plane-5a9f31bd1fd8f4.5049708015203823971305.png");
+    image1 = loadImage("assets/Flat Nature Art.png");
+    obstacleImg = loadImage("assets/kisspng-airplane-aircraft-cartoon-illustration-the-falling-plane-5a9f31bd1fd8f4.5049708015203823971305.png");
 
-    obstacleImg2 = loadImage("/assets/kisspng-airplane-aircraft-drawing-clip-art-toy-airplane-5b28e90a0654a5.8232014615294077540259.png");
-    playerImg = loadImage("/assets/kisspng-tank-soldier-military-armoured-fighting-vehicle-military-tanks-5a7bd8854654b7.1394788215180657972881.png")
-    trooperImg = loadImage("/assets/kisspng-soldier-clip-art-soldier-transparent-png-5a7851ad690200.1139676715178346694301.png")
-    trooperImg2 = loadImage("/assets/kisspng-soldier-clip-art-soldier-transparent-png-5a7851ad690200.1139676715178346694301.png")
-    explosionSprite = loadSpriteSheet("/assets/explosion.png", 16, 16, 5);
+    obstacleImg2 = loadImage("assets/kisspng-airplane-aircraft-drawing-clip-art-toy-airplane-5b28e90a0654a5.8232014615294077540259.png");
+    playerImg = loadImage("assets/kisspng-tank-soldier-military-armoured-fighting-vehicle-military-tanks-5a7bd8854654b7.1394788215180657972881.png")
+    trooperImg = loadImage("assets/kisspng-soldier-clip-art-soldier-transparent-png-5a7851ad690200.1139676715178346694301.png")
+    trooperImg2 = loadImage("assets/kisspng-soldier-clip-art-soldier-transparent-png-5a7851ad690200.1139676715178346694301.png")
+    explosionSprite = loadSpriteSheet("assets/explosion.png", 16, 16, 5);
 
     explosionAnimation = loadAnimation(explosionSprite);
-    explosionSound = loadSound("../assets/zapsplat_sound_design_explosion_designed_distortion_18616.mp3");
+    explosionSound = loadSound("assets/zapsplat_sound_design_explosion_designed_distortion_18616.mp3");
 }
 
 function setup() {
